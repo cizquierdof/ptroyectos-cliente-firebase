@@ -40,15 +40,17 @@ const ProjectsTable = (props) => {
                                     <td>{e.description}</td>
                                     <td>{e.client}</td>
                                     <td>
-                                        <Link className='ui basic button green' to={`/projects/${e.id}/view`}>
-                                            Ver
-                                        </Link>
-                                        <Link className='ui basic button blue' to={`/projects/${e.id}/edit`}>
-                                            Editar
-                                        </Link>
-                                        <a className='ui basic button red' href="/projects" onClick={() => onBorrarClicked(e.id)} >
-                                            Borrar
-                                        </a>
+                                        <div className='ui buttons'>
+                                            <Link className='ui basic button green' to={`/projects/${e.id}/view`}>
+                                                Ver
+                                            </Link>
+                                            <Link className='ui basic button blue' to={`/projects/${e.id}/edit`}>
+                                                Editar
+                                            </Link>
+                                            <a className='ui basic button red' href="/projects" onClick={() => onBorrarClicked(e.id)} >
+                                                Borrar
+                                             </a>
+                                        </div>
                                     </td>
                                 </tr>
                             )
