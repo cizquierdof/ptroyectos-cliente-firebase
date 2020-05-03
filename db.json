@@ -1,0 +1,48 @@
+{
+  "projects": [
+    {
+      "id": 1,
+      "code": "PY-R23",
+      "description": "Pagina proyecto",
+      "client": "Cárnicas Pérez"
+    },
+    {
+      "code": "PRY-22",
+      "description": "Nuevo proyecto web",
+      "client": "Amazon",
+      "id": 349079
+    },
+    {
+      "code": "Covid-19",
+      "description": "web información coronavirus",
+      "client": "OMS",
+      "id": 349080
+    },
+    {
+      "code": "proyecto 2",
+      "description": "nuevo proyecto de construcción",
+      "client": "fantomas",
+      "id": 349081
+    },
+    {
+      "code": "Covid-25",
+      "description": "Estadisticas nuevas",
+      "client": "OMS",
+      "id": 349082
+    }
+  ],
+  "clients": [
+    {
+      "name": "OMS",
+      "address": "New York",
+      "mail": "oms@mundo.org",
+      "id": 1
+    },
+    {
+      "name": "Cárnicas Pérez",
+      "address": "Valencia",
+      "mail": "fileton@carnicas.com",
+      "id": 2
+    }
+  ]
+}

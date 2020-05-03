@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# configuracion claves de aplicacion
+/src/config/firebase.js

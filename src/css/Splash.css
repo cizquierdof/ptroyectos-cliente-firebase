@@ -1,0 +1,46 @@
+.splash {
+    height               : 500px;
+    width                : 500px;
+    margin               : auto;
+    display              : grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows   : 1fr 1fr 1fr;
+    padding              : 2em;
+    font-family          : Fugaz one;
+}
+
+.red {
+    background-color : crimson;
+    grid-column-start: 1;
+    grid-column-end  : 3;
+    grid-row-start   : 1;
+    grid-row-end     : 3;
+    color            : darksalmon;
+    font-size        : 2em;
+    padding          : 2em 1.5em;
+}
+
+.white {
+
+    background-color : blanchedalmond;
+    grid-column-start: 2;
+    grid-column-end  : 4;
+    grid-row-start   : 2;
+    grid-row-end     : 4;
+    color            : darksalmon;
+    font-size        : 2em;
+    padding          : 8em 4em 0;
+
+}
+
+.about {
+    background-color : crimson;
+    grid-column-start: 2;
+    grid-column-end  : 3;
+    grid-row-start   : 2;
+    grid-row-end     : 3;
+    mix-blend-mode   : color-dodge;
+    color            : black;
+    font-size        : 1.5em;
+    padding          : 2.5em 1em;
+}
