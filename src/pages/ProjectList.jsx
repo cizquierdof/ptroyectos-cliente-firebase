@@ -15,7 +15,7 @@ const ProjectList = () => {
             db.collection('projects').get().then(
                 res=>{
 
-                    const elementos=res.docs.map(
+                    const docsProyectos=res.docs.map(
                         item=>{
                             const data=item.data();
                             return {
@@ -26,7 +26,7 @@ const ProjectList = () => {
                             }
                         }
                     )
-                    setProjects(elementos);
+                    setProjects(docsProyectos);
                 }
             )
             // axios.get(`${config.BASE_API_URL}/projects`).then(

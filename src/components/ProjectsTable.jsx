@@ -26,7 +26,6 @@ const ProjectsTable = (props) => {
                 <table className="ui striped table unstackable">
                     <thead>
                         <tr>
-                            <th>Id</th>
                             <th>Código de proyecto</th>
                             <th>Descripción</th>
                             <th>Cliente</th>
@@ -37,7 +36,6 @@ const ProjectsTable = (props) => {
                         {
                             props.items.map(
                                 e => <tr key={`project${e.id}`}>
-                                    <td>{e.id}</td>
                                     <td>{e.code}</td>
                                     <td>{e.description}</td>
                                     <td>{e.client}</td>
@@ -48,7 +46,7 @@ const ProjectsTable = (props) => {
                                         <Link className='ui basic button blue' to={`/projects/${e.id}/edit`}>
                                             Editar
                                         </Link>
-                                        <a className='ui basic button red' href="/#" onClick={() => onBorrarClicked(e.id)} >
+                                        <a className='ui basic button red' href="/projects" onClick={() => onBorrarClicked(e.id)} >
                                             Borrar
                                         </a>
                                     </td>

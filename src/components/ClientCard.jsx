@@ -1,6 +1,7 @@
 import React from 'react'
 
 const ClientCard = (props) => {
+    
     return (
         <div className="ui card">
             <div className="content">

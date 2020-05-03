@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import Header from '../components/Header'
 import { Link } from 'react-router-dom'
 import ClientCard from '../components/ClientCard'
-import Axios from 'axios';
-import config from '../config/config';
+import db from '../config/firebase'
 
 export class ClientView extends Component {
 
@@ -15,11 +14,11 @@ export class ClientView extends Component {
     }
 
     componentDidMount() {
-        //console.log(this.props.match)
-        Axios.get(`${config.BASE_API_URL}/clients/${this.props.match.params.id}/`)
-            .then(res =>
-                this.setState({
-                    client: res.data
+        
+        db.collection('clients').doc(this.props.match.params.id).get()
+            .then(
+                res=> this.setState({
+                    client:res.data()
                 })
             )
     }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect, Link } from 'react-router-dom'
-import Axios from 'axios';
-import config from '../config/config';
+import db from '../config/firebase'
+
 
 export class ClientForm extends Component {
 
@@ -21,17 +21,21 @@ export class ClientForm extends Component {
         //si existe 'id' queremos editar el cliente y hay que traerse los datos,
         //si id es null no traigo nada 
         if (id) {
-            Axios.get(`${config.BASE_API_URL}/clients/${id}/`)
-                .then(
-                    res => {
+            db.collection('clients').doc(id).get().then(
+                res => {
+                    if (res.exists) {
+
+                        const data = res.data();
                         this.setState({
-                            name: res.data.name,
-                            address: res.data.address,
-                            mail: res.data.mail
-                        })
+                            name: data.name,
+                            address: data.address,
+                            mail: data.mail
+                        }
+
+                        )
                     }
-                )
-                .catch(console.log);
+                }
+            )
         }
     }
 
@@ -67,23 +71,15 @@ export class ClientForm extends Component {
             mail: this.state.mail
         }
         if (this.props.id) {
-            Axios.put(`${config.BASE_API_URL}/clients/${this.props.id}`, client)
+            db.collection('clients').doc(this.props.id).set(client)
                 .then(
-                    res => this.setState({
-                        redirect: true
-                    })
-
-                ).catch(console.log)
-
+                    res => this.setState({ redirect: true })
+                )
         } else {
-            Axios.post(`${config.BASE_API_URL}/clients`, client)
-                .then(
-                    res => this.setState({
-                        redirect: true
-                    })
-                ).catch(console.log)
+            db.collection('clients').add(client).then(
+                res => this.setState({ redirect: true })
+            )
         }
-        console.log(client)
     }
 
     render() {
