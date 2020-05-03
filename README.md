@@ -1,6 +1,6 @@
 # Aplicación React con backend Firebase
 
-**IMPORTANTE** El fichero /src/config/firebase.js contiene las claves de la aplicación que son necesarias para que funcione tanto la propia aplicación como la base de datos. Estas claves son privadas y por tanto no he incluido este fichero en el repositorio, si he incluido en cambio el fichero **plantilla firebase.js** que contiene la misma informació excepto las claves privadas que deben sustituirse por las propias. Tras esto simplemente renombrar **plantilla firebase.js** por **firebase.js**.
+**IMPORTANTE** El fichero /src/config/firebase.js contiene las claves de la aplicación que son necesarias para que funcione tanto la propia aplicación como la base de datos. Estas claves son privadas y por tanto no he incluido este fichero en el repositorio, sí he incluido en cambio, el fichero **plantilla firebase.js** que contiene la misma información excepto las claves privadas que deberan sustituirse por las propias de quien esté interesado en reproducirla. Tras esto simplemente renombrar **plantilla firebase.js** por **firebase.js** para que funcione.
 
 La misma aplicación proyectos cliente, pero ahora utilizando firebase
 
