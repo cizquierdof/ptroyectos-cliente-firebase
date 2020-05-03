@@ -8,7 +8,7 @@ La misma aplicación proyectos cliente, pero ahora utilizando firebase
 
 - cuenta de Firebase
 - react-router-dom: npm i -s react-router-dom
-- API de firebase: npm i -s firebase
+- API de firebase para react: npm i -s firebase
 
 ## 1. Crear un proyecto Firebase
 
@@ -196,3 +196,81 @@ lo siguiente a modificar es projectView.js al que modificamos para que nos traig
         //     )
     }
 ```
+
+Una vez realizados estos cámbios, haremos lo mismo con la parte de clientes y ya nos podemos olvidar de axios.
+
+## 3. Hosting  en firebase
+
+El siguiente paso es hacer la aplicación accesible desde culaquier sitio a través de un navegador, eso lo conseguimos alojando la aplicación web en un servidor. En este caso y ya que estamos utilizando los servicios de base de datos de firebase, también alojaremos en Firebase la aplicación.
+
+### 1. Compilar la aplicación
+
+Ejecutamos el comando :
+
+```shell
+npm run-script- build
+```
+
+Alternativamente podemos ejecutar el mismo script desde el panel **NPM SCRIPTS** que ofrece el propio Visual Studio Code.
+
+Una vez hecho esto habrá creado una carpeta bulid en donde a guardado una versión minimazada de la aplicación que es lo que se ejecutará en producción.
+
+- Lo primero si no estaba hecho ya es instalar las Firebase Tools.
+
+```shell
+npm install -g firebase-tools
+```
+
+Despues habría que hacer login en Firebase, pero esto ya lo hemos hecho al dar de alta la base de datos firebase.
+
+- En el panel de control de Firebase hay que vincular la aplicación al sitio (Hosting)
+- Por último hay que lanzar la aplicación compilada con
+
+```shell
+firebase init
+
+? Are you ready to proceed? Yes
+? Which Firebase CLI features do you want to set up for this folder? Press Space to select features, then Enter to confirm your choices. Hosting: Configure and deploy Firebase Hosting sites
+
+=== Project Setup
+
+First, let's associate this project directory with a Firebase project.
+You can create multiple project aliases by running firebase use --add,
+but for now we'll just set up a default project.
+
+? Please select an option: Use an existing project
+? Select a default Firebase project for this directory: proyectos-cliente (proyectos-cliente)
+i  Using project proyectos-cliente (proyectos-cliente)
+
+=== Hosting Setup
+
+Your public directory is the folder (relative to your project directory) that
+will contain Hosting assets to be uploaded with firebase deploy. If you
+have a build process for your assets, use your build's output directory.
+
+?What do you want to use as your public directory? build
+
+Configure as a single-page app (rewrite all urls to /index.html)? No
+
++  Wrote build/404.html
+? File build/index.html already exists. Overwrite? No
+
+i  Skipping write of build/index.html
+
+i  Writing configuration info to firebase.json...
+i  Writing project information to .firebaserc...
+
++  Firebase initialization complete!
+```
+
+- El último paso es subirlo al hosting con el comando:
+
+```shell
+firebase deploy
+```
+
+si todo es correcto nos devolverá un par de direcciones, la consola del projecto y la de la aplicación:
+
+Project Console: <https://console.firebase.google.com/project/proyectos-cliente/overview>
+
+Hosting URL: <https://proyectos-cliente.web.app>
